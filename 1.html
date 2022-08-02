@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Symbol用于给对象添加一个独一无二的属性
+      //   当给对象添加新属性时，很容易造成属性名冲突，从而覆盖了原有的属性
+      //   有问题的代码 没有用Symbol之前
+      //   var obj = {
+      //     name: 'zs',
+      //     actor: '路人甲',
+      //   }
+
+      //   function fn(o) {
+      //     o.actor = '临时明星'
+      //     console.log(o)
+      //     delete o.actor
+      //   }
+
+      //   fn(obj)
+
+      //   var a = Symbol()
+      //   var b = Symbol()
+      //   console.log(a === b)
+
+      // ====================================
+      //   使用了Symbol之后
+
+      var obj = {
+        name: 'zs',
+        actor: '路人甲',
+      }
+
+      function fn(o) {
+        var actor = Symbol('actor')
+        o[actor] = '临时明星'
+        console.log(o)
+        delete o[actor]
+      }
+
+      fn(obj)
+    </script>
+  </body>
+</html>

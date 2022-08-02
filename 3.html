@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Person {}
+      class Star extends Person {}
+      const ldh = new Star()
+      console.log(ldh.toString())
+
+      var arr = [2, 3, 4]
+      console.log(arr)
+      console.log(arr.toString())
+      //   因为很多数据类型都重写了自己的toString,所以得不到一个类似[object Object]
+      // 借对象的toString
+      console.log(Object.prototype.toString.call(arr))
+      console.log(Object.prototype.toString.call(123))
+      console.log(Object.prototype.toString.call(null))
+    </script>
+  </body>
+</html>
